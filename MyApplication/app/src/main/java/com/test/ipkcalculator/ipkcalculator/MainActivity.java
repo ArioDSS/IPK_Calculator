@@ -23,9 +23,6 @@ public class MainActivity extends ActionBarActivity {
         logoImageView = (ImageView) findViewById(R.id.logoImageView);
         startButton = (Button) findViewById(R.id.startButton);
         settingButton = (Button) findViewById(R.id.settingsButton);
-    }
-
-    public void onViewCreated(View view, Bundle savedInstanceState) {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +38,10 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+    }
+
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+
 
     }
 
