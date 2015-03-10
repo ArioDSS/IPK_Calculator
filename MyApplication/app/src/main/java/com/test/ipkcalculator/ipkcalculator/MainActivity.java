@@ -3,19 +3,18 @@ package com.test.ipkcalculator.ipkcalculator;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.test.ipkcalculator.ipkcalculator.ViewController.Settings.SettingsActivity;
+import com.test.ipkcalculator.ipkcalculator.ViewController.General.ChooseBinusianActivity;
 
 
 public class MainActivity extends ActionBarActivity {
     private ImageView logoImageView;
     private Button startButton;
+    private Button settingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +22,26 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         logoImageView = (ImageView) findViewById(R.id.logoImageView);
         startButton = (Button) findViewById(R.id.startButton);
-
+        settingButton = (Button) findViewById(R.id.settingsButton);
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent myIntent = new Intent(MainActivity.class, OutfitDetailActivity.class);
-//                context.startActivity(myIntent);
+                Intent myIntent = new Intent(MainActivity.this, ChooseBinusianActivity.class);
+                MainActivity.this.startActivity(myIntent);
             }
         });
+        settingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, SettingsActivity.class);
+                MainActivity.this.startActivity(myIntent);
+
+            }
+        });
+
     }
 
 
